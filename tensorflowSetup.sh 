@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+echo "$(tput setaf 4)$ Installing CUDA (tput sgr0)"
+wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
+sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+sudo apt-get update 
+sudo apt-get install cuda
+
+echo "$(tput setaf 2)$ Installing CUDNN 5 (tput sgr0)"
+CUDNN_URL="http://developer.download.nvidia.com/compute/redist/cudnn/v5.1/cudnn-8.0-linux-x64-v5.1.tgz"
+wget ${CUDNN_URL}
+sudo tar -xzf cudnn-8.0-linux-x64-v5.1.tgz -C /usr/local
+rm cudnn-8.0-linux-x64-v5.1.tgz && sudo ldconfig
+
+
+sudo apt-get install libcupti-dev
