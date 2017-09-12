@@ -38,7 +38,7 @@ echo "$(tput setaf 5) Getting ros install (tput sgr0)$"
 sudo apt-get install python-rosinstall
 
 echo "$(tput setaf 6) Installing virtual env: (tput sgr0)$"
-sudo apt install virtualenv
+sudo apt install python-virtualenv
 sudo apt install python-pip
 
 sudo apt-get dist-upgrade
