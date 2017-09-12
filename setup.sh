@@ -37,21 +37,9 @@ source ~/.bashrc
 echo "$(tput setaf 5) Getting ros install (tput sgr0)$"
 sudo apt-get install python-rosinstall
 
-echo "$(tput setaf 4) Installing OpenCV : (tput sgr0)$"
-sudo apt install build-essential
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
-cd ~/
-git clone https://github.com/opencv/opencv.git
-cd ~/opencv
-mkdir release
-cd release
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
-make
-sudo make install
-
 echo "$(tput setaf 6) Installing virtual env: (tput sgr0)$"
-sudo apt instal virtualenv
+sudo apt install virtualenv
+sudo apt install python-pip
 
 sudo apt-get dist-upgrade
 
