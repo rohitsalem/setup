@@ -20,6 +20,11 @@ sudo apt update; sudo apt install atom
 echo "$(tput setaf 4) Installing htop (tput sgr0)$"
 sudo apt install htop
 
+
+echo "$(tput setaf 6) Installing virtual env: (tput sgr0)$"
+sudo apt install python-virtualenv
+sudo apt install python-pip
+
 echo "$(tput setaf 3) Installing ROS :(tput sgr0)$"
 echo "$(tput setaf 2) Installing ROS : Setting up sources.list(tput sgr0)$"
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -37,9 +42,19 @@ source ~/.bashrc
 echo "$(tput setaf 5) Getting ros install (tput sgr0)$"
 sudo apt-get install python-rosinstall
 
-echo "$(tput setaf 6) Installing virtual env: (tput sgr0)$"
-sudo apt install python-virtualenv
-sudo apt install python-pip
+echo "$(tput setaf 7) Installing Docker-CE: (tput sgr0)$"
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+sudo apt-get install docker-ce
 
 sudo apt-get dist-upgrade
 
