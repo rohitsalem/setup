@@ -3,27 +3,30 @@
 ##        bash setup.sh
 ## Author: rsalem
 ## Purpose: setups the system for Ubuntu 16.04
-## Installs: Terminator, Atom, Qtcreator, Virtual env, htop ROS-Kinetic Install, OpenCV3 
+## Installs: Terminator, Atom, Qtcreator, Virtual env, htop, ROS-Kinetic, docker-ce, git-gui,  
 
 sudo apt update
 
 echo "$(tput setaf 2)Installing terminator(tput sgr0)$"
-sudo apt install terminator
+sudo apt install terminator -y
 
 echo "$(tput setaf 2)Installing qtcreator(tput sgr0)$"
-sudo apt install qtcreator
+sudo apt install qtcreator -y
 
 echo "$(tput setaf 2)Installing atom (tput sgr0)$"
-sudo add-apt-repository ppa:webupd8team/atom
-sudo apt update; sudo apt install atom 
+sudo add-apt-repository ppa:webupd8team/atom -y
+sudo apt update; sudo apt install atom -y
 
 echo "$(tput setaf 4) Installing htop (tput sgr0)$"
 sudo apt install htop
 
 
 echo "$(tput setaf 6) Installing virtual env: (tput sgr0)$"
-sudo apt install python-virtualenv
-sudo apt install python-pip
+sudo apt install python-virtualenv -y
+sudo apt install python-pip -y 
+
+echo "$((tput setaf 2) Installing git-gui: (tput sgr0)$"
+sudo apt install git-gui -y
 
 echo "$(tput setaf 3) Installing ROS :(tput sgr0)$"
 echo "$(tput setaf 2) Installing ROS : Setting up sources.list(tput sgr0)$"
@@ -43,18 +46,18 @@ echo "$(tput setaf 5) Getting ros install (tput sgr0)$"
 sudo apt-get install python-rosinstall
 
 echo "$(tput setaf 7) Installing Docker-CE: (tput sgr0)$"
-sudo apt-get install \
+sudo apt-get install -y\
     apt-transport-https \
     ca-certificates \
     curl \
     software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
+sudo add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 sudo apt-get update
-sudo apt-get install docker-ce
+sudo apt-get install docker-ce -y
 
 sudo apt-get dist-upgrade
 
