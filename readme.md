@@ -9,7 +9,15 @@ The Script Installs:
 * Python-pip : Package manager, pip
 * git-gui : Interactive git manager
 * ROS Kinetic
-* Docker-CE 
+* Docker-CE
+
+Other Special Utilities:
+* peek - GIF recorder:
+  `sudo add-apt-repository ppa:peek-developers/stable
+   sudo apt update
+   sudo apt install peek`
+* Kazam - Screen Recorder: 
+  `sudo apt install kazam`
 
 
 
